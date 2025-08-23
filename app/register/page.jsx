@@ -4,9 +4,13 @@ import { Button, Checkbox, Form, Input, Flex } from "antd";
 import Link from "next/link";
 import { MdOutlineEmail } from "react-icons/md";
 import ImageUpload from "../components/ImageUpload";
+import { useState } from "react";
 
 export default function register() {
+  const [fileList, setFileList] = useState([]);
   const onFinish = (values) => {
+    values.image = fileList;
+
     console.log("Received values of form: ", values);
   };
 
@@ -16,7 +20,7 @@ export default function register() {
         <Form
           name="login"
           initialValues={{ remember: true }}
-          style={{ maxWidth: 360 }}
+          style={{ maxWidth: 360, padding: 0 }}
           onFinish={onFinish}
         >
           <Form.Item
@@ -55,8 +59,8 @@ export default function register() {
           </Form.Item>
 
           {/* image upload */}
-          <div className="mb-5"> 
-            <ImageUpload />
+          <div className="mb-5">
+            <ImageUpload setFileList={setFileList} />
           </div>
 
           {/* button */}
