@@ -1,13 +1,24 @@
+import Banner from "./components/Banner";
 import Products from "./components/Products";
-import './globals.css'
+import "./globals.css";
+import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
 
 export default function home() {
   return (
     <div>
+      {/* banner section */}
+      <section>
+        <Banner />
+      </section>
       {/* products */}
-      <div>
+      <section>
         <Products />
-      </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section>
+        <WhyChooseUs />
+      </section>
     </div>
   );
 }
