@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Button } from "antd";
+import PrimaryButton from "../components/Button";
 
 export default function Navbar() {
   const navLinks = (
@@ -60,9 +60,7 @@ export default function Navbar() {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <Button type="primary" href="/login">
-            Login
-          </Button>
+          <PrimaryButton btnName={"Login"} href={"/login"} />
         </div>
       </div>
     </div>
