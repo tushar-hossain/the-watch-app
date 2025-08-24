@@ -5,26 +5,26 @@ export default function Testimonials() {
       role: "Fitness Enthusiast",
       feedback:
         "The Watch has completely changed the way I track my workouts. The GPS and heartbeat analysis are super accurate!",
-      image: "https://i.ibb.co/QMww5mv/user1.jpg",
+      image: "https://i.ibb.co.com/hp6tTkW/images-1.jpg",
     },
     {
       name: "Michael Smith",
       role: "Traveler",
       feedback:
         "I love the security features! I can share my location with family when I hike. It gives me peace of mind.",
-      image: "https://i.ibb.co/jz9zqYt/user2.jpg",
+      image: "https://i.ibb.co.com/0VWSYn1Q/images-2.jpg",
     },
     {
       name: "Emily Carter",
       role: "Tech Enthusiast",
       feedback:
         "Stylish, smart, and reliable! The innovative design makes it more than just a watch—it's my daily companion.",
-      image: "https://i.ibb.co/TmBRM0f/user3.jpg",
+      image: "https://i.ibb.co.com/S48Bq4rW/images-3.jpg",
     },
   ];
 
   return (
-    <section className="py-16 bg-neutral">
+    <section className="py-16 bg-neutral rounded-md">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-primary mb-6">
           What Our Customers Say

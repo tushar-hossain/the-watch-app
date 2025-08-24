@@ -1,17 +1,45 @@
+"use client";
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const lifestyleImages = [
-  "https://i.ibb.co/7Y9w6Qn/lifestyle1.jpg",
-  "https://i.ibb.co/N9rQYQG/lifestyle2.jpg",
-  "https://i.ibb.co/9rQv7xK/lifestyle3.jpg",
-  "https://i.ibb.co/hY1f5nP/lifestyle4.jpg",
-  "https://i.ibb.co/2q9vHhF/lifestyle5.jpg",
-  "https://i.ibb.co/3f7F9YB/lifestyle6.jpg",
+  "https://i.ibb.co.com/DPR2hGdf/images-4.jpg",
+  "https://i.ibb.co.com/TJShsZh/images-5.jpg",
+  "https://i.ibb.co.com/wNdZbHhy/images.jpg",
+  "https://i.ibb.co.com/1YBntFfz/The-Galaxy-Watch-8-perfect-companion-to-your-Galaxy-phone-perfect-guide-for-a-new-lifestyle.jpg",
+  "https://i.ibb.co.com/SwJgFYXK/beaaa.jpg",
+  "https://i.ibb.co.com/k6yL2JNW/61n0a-VXta7-L-UY1000.jpg",
 ];
 
-export default function LifestyleImages() {
+export default function LifestyleCarousel() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <section className="py-16 bg-base-100">
+    <section className="py-16 bg-base-100 w-full">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-primary mb-6">
           See The Watch in Action
@@ -21,20 +49,19 @@ export default function LifestyleImages() {
           perfectly in your daily life—fitness, travel, work, and leisure.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {lifestyleImages.map((img, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-2xl shadow-lg hover:scale-105 transform transition duration-300"
-            >
-              <img
-                src={img}
-                alt={`Lifestyle ${index + 1}`}
-                className="w-full h-64 object-cover"
-              />
+        <Slider {...settings} className="mx-auto">
+          {lifestyleImages?.map((img, index) => (
+            <div key={index} className="px-2">
+              <div className="overflow-hidden rounded-2xl shadow-lg hover:scale-105 transform transition duration-300">
+                <img
+                  src={img}
+                  alt={`Lifestyle ${index + 1}`}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </section>
   );
