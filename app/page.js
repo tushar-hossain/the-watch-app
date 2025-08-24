@@ -19,6 +19,10 @@ export default function home() {
       <section>
         <WhyChooseUs />
       </section>
+      {/* Testimonials */}
+      <section>
+        
+      </section>
     </div>
   );
 }
