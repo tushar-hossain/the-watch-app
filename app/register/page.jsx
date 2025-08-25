@@ -5,13 +5,16 @@ import Link from "next/link";
 import { MdOutlineEmail } from "react-icons/md";
 import ImageUpload from "../components/ImageUpload";
 import { useState } from "react";
+import { registerUser } from "../actions/auth/registerUser";
 
 export default function register() {
   const [fileList, setFileList] = useState([]);
   const onFinish = (values) => {
     values.image = fileList;
 
-    console.log("Received values of form: ", values);
+    // values send to server
+    registerUser(values);
+    // console.log("Received values of form: ", values);
   };
 
   return (
